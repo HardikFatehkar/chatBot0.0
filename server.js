@@ -38,6 +38,15 @@ const responses = {
             { text: "Report an Issue", value: "report-issue" },
         ]
     },
+    general: {
+        text: "Support: What do you need help with?",
+        options: [
+            { text: "Knowledge of eStudent", value: "knowledege-eStudent" },
+            { text: "Enrollment Contract", value: "enrollment-conrtract" },
+            { text: "Acceptance Letter Issues", value: "acceptance-letter" },
+            { text: "Status Current Problems", value: "not-current" },
+        ]
+    },
     // Additional categories can be added here...
 };
 
@@ -51,7 +60,9 @@ app.post('/api/message', (req, res) => {
         botReply = responses.hr;
     } else if (userMessage.includes('it')) {
         botReply = responses.it;
-    } else {
+    }  else if (userMessage.includes('general')) {
+        botReply = responses.general;
+    }else {
         botReply = { text: "I'm sorry, I didn't understand that.", options: null };
     }
 
