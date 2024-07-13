@@ -22,9 +22,9 @@ inTeriminal
 4.3Save the server.js file in the root of your project directory.
 
 your-project/
-├── public/
-│   └── index.html
-└── server.js
+|-public/
+|   |-index.html
+|-server.js
 
 
 5.Run the Server:
